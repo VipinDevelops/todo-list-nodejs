@@ -3,11 +3,13 @@ const Todos = [
     id: 1,
     title: "Study",
     completed: false,
+    createdOn: new Date(),
   },
   {
     id: 2,
     title: "Coding",
     completed: true,
+    createdOn: new Date(),
   },
 ];
 const getTodos = (req, res) => {
@@ -34,6 +36,7 @@ const postTodo = (req, res) => {
     id: newId,
     title: req.body.title,
     completed: false,
+    createdOn: new Date(),
   };
 
   Todos.push(newItem);
@@ -49,6 +52,7 @@ const putTodo = (req, res) => {
       id: found.id,
       title: req.body.title,
       completed: req.body.completed,
+      createdOn: new Date(),
     };
     let targetIndex = Todos.indexOf(found);
     Todos.splice(targetIndex, 1, updated);
