@@ -1,9 +1,7 @@
 const express = require("express");
+const { getTodos } = require("../controllers/Todo.controller");
+const Router = express.Router();
 
-const Router = express.Router;
-
-Router.get("/", (res, req) => {
-  res.send("Response from the Get router");
-});
+Router.get("/", getTodos);
 
 module.exports = Router;
