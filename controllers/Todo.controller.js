@@ -10,7 +10,6 @@ const Todos = [
     completed: true,
   },
 ];
-
 const getTodos = (req, res) => {
   res.status(201).json(Todos);
 };
@@ -27,7 +26,23 @@ const getTodo = (req, res) => {
   }
 };
 
+const postTodo = (req, res) => {
+  //Get the id of last items
+  let itemIds = Todos.map((item) => item.id);
+
+  let newId = itemIds.length > 0 ? Math.max(...itemIds) + 1 : 1;
+  let newItem = {
+    id: newId,
+    title: req.body.title,
+    completed: false,
+  };
+
+  Todos.push(newItem);
+  res.status(201).json(newItem);
+};
+
 module.exports = {
   getTodos,
   getTodo,
+  postTodo,
 };
