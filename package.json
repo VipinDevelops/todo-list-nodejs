@@ -1,8 +1,8 @@
 {
   "name": "rest-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "REST API with Nodejs and Express",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/imvipindev/REST-API.git"
   },
-  "author": "",
+  "author": "imvipindev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/imvipindev/REST-API/issues"
