@@ -6,7 +6,7 @@ Router.get("/", TodoController.getTodos);
 
 Router.get("/:id", TodoController.getTodo);
 
-Router.post("/");
+Router.post("/", TodoController.postTodo);
 
 Router.put("/:id");
 
