@@ -1,3 +1,4 @@
+//Sample Todo objects
 const Todos = [
   {
     id: 1,
@@ -12,10 +13,13 @@ const Todos = [
     createdOn: new Date(),
   },
 ];
+
+//Get all todos function
 const getTodos = (req, res) => {
   res.status(201).json(Todos);
 };
 
+//Get one todo function
 const getTodo = (req, res) => {
   let found = Todos.find(function (item) {
     return item.id === parseInt(req.params.id);
@@ -28,6 +32,7 @@ const getTodo = (req, res) => {
   }
 };
 
+//Create one todo function
 const postTodo = (req, res) => {
   let itemIds = Todos.map((item) => item.id);
 
@@ -43,6 +48,7 @@ const postTodo = (req, res) => {
   res.status(201).json(newItem);
 };
 
+//Update one todo function
 const putTodo = (req, res) => {
   let found = Todos.find((item) => {
     return item.id == parseInt(req.params.id);
@@ -62,6 +68,7 @@ const putTodo = (req, res) => {
   }
 };
 
+//Delete One todo function
 const deleteTodo = (req, res) => {
   let found = Todos.find((item) => {
     return item.id == parseInt(req.params.id);
@@ -73,6 +80,8 @@ const deleteTodo = (req, res) => {
   }
   res.sendStatus(204);
 };
+
+//Export Functions
 module.exports = {
   getTodos,
   getTodo,
