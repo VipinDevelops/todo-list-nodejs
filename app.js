@@ -1,10 +1,12 @@
 const express = require("express");
 const TodoRoutes = require("./routes/Todo.route");
+const cors = require("cors");
+
 const app = express();
 const host = "localhost";
 const PORT = 8000;
 
-app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(express.json());
 
 app.use("/api", TodoRoutes);
